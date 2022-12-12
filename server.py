@@ -53,7 +53,7 @@ def create_app(config):
         places_required = int(request.form['places'])
 
         if not competition.name in club.places_booked:
-            club.places_booked[competition.name] = 0
+            club.places_booked[competition.name] = "0"
 
         if int(club.places_booked[competition.name]) + places_required > competition.max_places_required:
             flash("Sorry, you can't book more than 12 places for this competition.")
